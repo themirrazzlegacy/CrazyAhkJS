@@ -1,4 +1,4 @@
-> ⚠️ You cannot do this without the docs. Please read the docs!! I BEG YOU!
+> ⚠️ You cannot do this without the docs. Please read the docs!! I BEG YOU!<br>
 > [Read the docs](/docs/README.md)
 # CrazyAhkJS
 Crazy Errors in AutoHotKey and JScript!
@@ -14,9 +14,9 @@ It works on one Linux distro we made called [the docs](/docs/README.md), which i
 
 
 ###### Sponsored Content
-> "The Docs" - [What is this?](/docs/SPONSORS.md) [Report Sponsor](/docs/REPORT.md)
-> **Read the docs today!**
-> [click here](/docs/README.md), you won't regret it!
+> [What is this?](/docs/SPONSORS.md) [Report Sponsor](/docs/REPORT.md)<br>
+> **Read the docs today!**<br>
+> [click here](/docs/README.md), you won't regret it!<br>
 
 ## How to Use
 ### Step 1. Download and extract the `source` folder
