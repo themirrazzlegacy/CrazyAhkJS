@@ -1,8 +1,9 @@
+> ⚠️ You cannot do this without the docs.
 # CrazyAhkJS
 Crazy Errors in AutoHotKey and JScript!
 
 ## Documentation
->> [here](/docs/README.md) <<
+\>\> [here](/docs/README.md) <<
 #### [CLICK FOR DOCS](/docs/README.md)
 visit https://github.com/themirrazz/CrazyAhkJS/blob/main/docs/README.md for free docs today ;) 
 
