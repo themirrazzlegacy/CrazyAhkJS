@@ -158,7 +158,7 @@ function SetMasterVolume(volume) {
 }
 
 // Crazy Error Code
-Sleep(5000)
+Sleep(5000);
 (function(){
     var content=i_binaryFileToString('.\\czesource.js');
     /*
