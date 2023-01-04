@@ -6,6 +6,37 @@ function ShowDialog(title,text,options,x,y) {
   wsh.Exec("./message-box.exe \""+kindOfToJSON(title)+"\" \""+kindOfToJSON(text)+"\" "+options+" "+x+" "+y)
 }
 
+var ErOpt={
+    Style: {
+        None: 0,
+        Hand: 16,
+        Warning: 48,
+        Asterisk: 64,
+        Question: 32
+    },
+    Buttons: {
+        OK:0,
+        OkCancel:1,
+        AbortRetryIgnore:2,
+        YesNoCancel: 3,
+        YesNo: 4,
+        RetryCancel: 5,
+        CancelTryAgainContinue: 6
+    },
+    DefaultButton: {
+        First: 0,
+        Second: 256,
+        Third: 512,
+        Forth: 768
+    },
+    ShowHelpButton:16384,
+    RightToLeft: 1048576,
+    RightAlign: 524288,
+    AlwaysOnTop:262144,
+    SystemModal: 4096,
+    TaskModal: 8192
+}
+
 //Reads a binary file, returns a string
 // https://stackoverflow.com/a/6585953/17003847
 function i_binaryFileToString(fileName) {
@@ -127,7 +158,7 @@ function SetMasterVolume(volume) {
 }
 
 // Crazy Error Code
-
+Sleep(5000)
 (function(){
     var content=i_binaryFileToString('.\\czesource.js');
     /*
@@ -145,6 +176,8 @@ function SetMasterVolume(volume) {
         i_changeEnv('Win10')
     } else if(content.slice(0,12)==="// @env Win7") {
         i_changeEnv('Win7')
+    } else if(content.slice(0,13)==="// @env WinXP") {
+        i_changeEnv('WinXP')
     }
     eval(content);
 })()
