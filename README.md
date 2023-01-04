@@ -12,6 +12,8 @@ visit https://github.com/themirrazz/CrazyAhkJS/blob/main/docs/README.md for free
 This only works on Windows XP and above. Currently, we only have AutoPlay executables for Windows 8.1, 10, and 11.
 It works on one Linux distro we made called [the docs](/docs/README.md), which is actually the documentation and not a Linux distro.
 
+## Demos
+Wanna see a live demo? [Click here](/demos/README.md) to see our demos ;)
 
 ###### Sponsored Content
 > [What is this?](/docs/SPONSORS.md) [Report Sponsor](/docs/REPORT.md)<br>
