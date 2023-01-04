@@ -1,6 +1,11 @@
 # CrazyAhkJS
 Crazy Errors in AutoHotKey and JScript!
 
+## Documentation
+>> [here](/docs/README.md) <<
+#### [CLICK FOR DOCS](/docs/README.md)
+visit https://github.com/themirrazz/CrazyAhkJS/blob/main/docs/README.md for free docs today ;) 
+
 ## Notice
 This only works on Windows XP and above. Currently, we only have AutoPlay executables for Windows 8.1, 10, and 11.
 
