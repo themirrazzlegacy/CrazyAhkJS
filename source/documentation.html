@@ -1,0 +1,130 @@
+<h1 id="crazyahkjs-docs">CrazyAHKJS Docs</h1>
+<p>Documentation, ya know :)</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<p><a href="#change-the-enviornment">Change the enviornment</a>
+<a href="#table-of-contents">Table of Contents</a>
+<a href="#error-dialogs">Error dialogs</a>
+<a href="#running-outside-programs">Running outside programs</a>
+<a href="#user-account-control">User Account Control</a>
+<a href="#autoplay-dialogs">AutoPlay Dialogs</a>
+<a href="#pausing-in-your-code">Pausing in your Code</a>
+<a href="#playing-background-music">Playing Background Music</a>
+<a href="#set-device-volume">Set Device Volume</a></p>
+<h2 id="change-the-enviornment">Change the enviornment</h2>
+<p>Add this line to the beggining of your code:</p>
+<pre><code class="language-js">// @env enviornment
+</code></pre>
+<p>Replace <code>enviornment</code> with the enviornment ID of your choice: <code>Win11</code>, <code>Win10</code>, <code>Win8.1</code>, <code>Win7</code>, or <code>WinXP</code>. (the default is <code>Win11</code>).</p>
+<h2 id="error-dialogs">Error Dialogs</h2>
+<p>Error dialogs use a simple JavaScript command:</p>
+<pre><code class="language-ts">ShowDialog(
+   title: string,
+   message: string,
+   options: number,
+   x: number,
+   y: number
+)
+</code></pre>
+<p>You can use our special <code>ErOpt</code> options dialog to help with the options.
+For example, you could create an error like this:</p>
+<pre><code class="language-js">ShowDialog(&quot;Error&quot;, &quot;what did u do&quot;, 16, 15, 15)
+</code></pre>
+<p>Or, you could do it like this:</p>
+<pre><code class="language-js">ShowDialog(
+  &quot;Error&quot;,
+  &quot;what did u do&quot;,
+  ErOpt.Style.Hand,
+  15,15
+)
+</code></pre>
+<p>The <code>ErOpt</code> object has the following properties:</p>
+<ul>
+<li><code>ErOpt.Style</code><ul>
+<li><code>Hand</code> - Shows the error icon</li>
+<li><code>Warning</code> - Shows the warning icon</li>
+<li><code>Information</code> - Shows the information &quot;I&quot;</li>
+<li><code>Question</code> - Shows the question mark</li>
+<li><code>None</code> - Shows no icon (default)</li>
+</ul>
+</li>
+<li><code>ErOpt.Buttons</code><ul>
+<li><code>OK</code> - OK (default)</li>
+<li><code>OkCancel</code> - Ok and cancel</li>
+<li><code>AbortRetryIgnore</code> - Abort, Retry, and Ignore</li>
+<li><code>YesNoCancel</code> - Yes, No, and Cancel</li>
+<li><code>YesNo</code> - Yes and No</li>
+<li><code>RetryCancel</code> - Retry and Cancel</li>
+<li><code>CancelTryAgainContinue</code> - Cancel, Try Again, and Continue</li>
+</ul>
+</li>
+<li><code>ErOpt.DefaultButton</code><ul>
+<li><code>First</code> - 1st is focused automatically (default)</li>
+<li><code>Second</code> - 2nd is focused automatically</li>
+<li><code>Third</code> - 3rd is focused automatically</li>
+<li><code>Fourth</code> - Help is focused automatically</li>
+</ul>
+</li>
+<li><code>HelpButton</code> - adds a help button</li>
+<li><code>RightToLeft</code> - right to left, for languages like Hebrew and Arabic (or for red zones)</li>
+<li><code>SystemModal</code> - system modal</li>
+<li><code>TaskModal</code> - task modal</li>
+<li><code>RightAlign</code> - text-align to right (NOT the same as right to left!!)</li>
+<li><code>AlwaysOnTop</code> - anoying thing...</li>
+</ul>
+<p>If you want to put a dialog in the center, you can use <code>ShowDialogCentered</code>:</p>
+<pre><code class="language-ts">ShowDialogCentered(
+  title: string,
+  message: string,
+  offset: string
+)
+</code></pre>
+<p>For example:</p>
+<pre><code class="language-js">ShowDialogCentered(&quot;&quot;,&quot;This dialog is in the center!&quot;)
+</code></pre>
+<p>You can also use <code>ShowDialogCenterOffset</code> to center a dialog and then move it by a certain amount of pixels:</p>
+<pre><code class="language-js">ShowDialogCenterOffset(&quot;&quot;,&quot;This dialog is 30 pixels away from the center!&quot;, 30, 30)
+</code></pre>
+<p>Or make a dialog appear at a random position onscreen.</p>
+<pre><code class="language-js">ShowDialogRandom(&quot;&quot;,&quot;This dialog is in a random position!&quot;)
+</code></pre>
+<h2 id="running-outside-programs">Running Outside Programs</h2>
+<p>We don&#39;t recommend, but you can use <code>Wsh.Run</code> or <code>Wsh.Exec</code>.</p>
+<h2 id="user-account-control">User Account Control</h2>
+<p>You can show genuine UAC dialogs using <code>ShowUACFor</code>. For example, you could use this code to show a user account control dialog for running Notepad with admin permissions:</p>
+<pre><code class="language-js">ShowUACFor(&quot;notepad.exe&quot;)
+</code></pre>
+<p>This works for any executable as long as you know the absolute path, or if it&#39;s the same folder or in <code>C:\Windows</code> or <code>C:\Windows\system32</code>.</p>
+<h2 id="autoplay-dialogs">AutoPlay Dialogs</h2>
+<p>Like stated, you&#39;ll need to take the screenshots yourself and put them in the &quot;source&quot; folder (titled <code>autoplay.png</code> for Windows 11, <code>autoplay10.png</code> for Windows 10, and <code>autoplay81.png</code> for Windows 8.1). You can then use <code>ShowAutoPlay</code> to show the dialog:</p>
+<pre><code class="language-js">ShowAutoPlay()
+</code></pre>
+<p>You can hide it again using <code>HideAutoPlay</code>:</p>
+<pre><code class="language-js">HideAutoPlay()
+</code></pre>
+<p>Every time <code>HideAutoPlay</code> is called, a command prompt quickly opens and closes. To prevent this, you can used Asynchronous Time-Based AutoPlay dialogs, via the <code>ShowAutoPlayFor</code> command:</p>
+<pre><code class="language-js">ShowAutoPlayFor(1000) // show an autoplay dialog for 1 second
+</code></pre>
+<p>If you need your code to wait, you can use this alternative instead of a <code>Sleep</code> function:</p>
+<pre><code class="language-js">ShowAutoPlaySync(1000)
+</code></pre>
+<h2 id="pausing-in-your-code">Pausing in your Code</h2>
+<p>Using the <code>Sleep</code> function, it pauses the specified number of milliseconds:</p>
+<pre><code class="language-js">Sleep(1000) // sleep for 1 second
+</code></pre>
+<h2 id="playing-background-music">Playing Background Music</h2>
+<p>You can play background music using the <code>StartBGM</code> function:</p>
+<pre><code class="language-js">StartBGM(&quot;Marisa Stole the Precious Thing&quot;)
+</code></pre>
+<p>Note it only supports <code>.mp3</code> files that are in the <code>source</code> directory (for now).
+You don&#39;t need to do this if you&#39;re going to add it in a video editor later.</p>
+<h2 id="set-device-volume">Set Device Volume</h2>
+<p>You can set the master volume of your device by using the <code>SetMasterVolume</code> script:</p>
+<pre><code class="language-js">SetMasterVolume(100)
+</code></pre>
+<h2 id="recycling-bin">Recycling Bin</h2>
+<p>Use <code>FillRecycleBin</code> to create a junk file and recycle it:</p>
+<pre><code class="language-js">FillRecycleBin()
+</code></pre>
+<p>To empty the recycle bin, just use <code>EmptyRecycleBin</code>:</p>
+<pre><code class="language-js">EmptyRecycleBin()
+</code></pre>
