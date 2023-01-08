@@ -107,7 +107,15 @@ function EmptyRecycleBin() {
 }
 
 function ShowAutoPlayFor(time) {
-  wsh.Exec('./autoplay-timed.exe '+time)
+  var Execs$={
+    'Win11':'autoplay-timed',
+    'Win10':'autoplay-timed10',
+    'Win8':'autoplay-timed8.exe',
+    'Win7': 'autoplay-timed7.exe',
+    'WinVista':'autoplay-timed7.exe',
+    'WinXP':'autoplay-timedXP.exe'
+  }
+  wsh.Exec('./'+(Execs$[$CURRENTENV]||'autoplay-timed')+'.exe '+time)
 }
 
 function ShowAutoPlaySync(time) {
