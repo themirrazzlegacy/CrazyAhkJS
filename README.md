@@ -35,7 +35,7 @@ That's literally all there is to it.
 
 ## Not working?
 ### Step 1. Check the version
-Do you have the write version?
+Do you have the right version?
 ### Step 2. Check your code
 Is your code written correctly?
 ### Step 3. Check the folder
